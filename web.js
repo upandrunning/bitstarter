@@ -4,15 +4,15 @@ var fs = require('fs');
 var filereadbits = fs.readFileSync('index.html');
 
 var fileBuffer = new Buffer(filereadbits);
-var fileString = fileBuffer.toString();
 
+var fileString = fileBuffer.toString();
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   
 
-	response.send(filereadbits);
+	response.send(fileString);
 });
 
 var port = process.env.PORT || 5000;
